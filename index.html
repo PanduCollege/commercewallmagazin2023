@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>COMMERCE</title>
+        <link rel="stylesheet" href="book.css">
+    </head>
+    <body>
+        
+        <div class="slider">
+            <div class="item">
+                <h1>Welcome!</h1>
+                <h3><br><br>Wall Magazinem <br>of <br>Commerce Department</h3>
+                <br><h3>For session 2023-24</h3>
+            </div>
+            
+            <div class="item">
+                <h1>প্রবাহিকা</h1>
+                <img src="img/1.jpg"></img>
+            </div>
+            <div class="item">
+                <h1>ABOUT</h1>
+                The Wall Magazine of Commerce Department is inaugurated by respected Vice-Principal Dr. Chandana Sinha Roy, in presence faculties and students of the department. The theme of the Wall Magazine was "Tourism of Assam", where major tourist spots of Assam, are presented through it. In the inauguration ceremony, respected Vice-Principal madam has addressed to all after inauguration and
+            </div>
+            <div class="item">                
+                explain how this type of works helps the students in participative learning and also encouraged the students and faculty to continue sach type of activities in upcoming time regularly. She also appreciated the students for such a beautiful presentation of the Wall Magazine.
+            </div>
+            <div class="item">
+                <img src="img/2.jpg">
+                <img src="img/3.jpg">
+                
+            </div>
+            <div class="item">
+                <img src="img/4.jpg">
+                <img src="img/5.jpg">
+            </div>
+            <div class="item">
+                <img src="img/6.jpg">
+                <img src="img/7.jpg">
+            </div>
+            <div class="item">
+                <img src="img/8.jpg">
+                <img src="img/9.jpg">
+            </div>
+            <div class="item">
+                <img src="img/10.jpg" class="R">
+            </div>
+            <div class="item">
+                <img src="img/11.jpg" class="L">
+            </div>
+            <div class="item">
+                <img src="img/12.jpg" class="L">
+            </div>
+            <button id="next">></button>
+            <button id="prev"><</button>
+        </div>
+        
+        
+        <script src="book.js"></script>
+        <script>
+            let touchStartX = 0;
+            let touchEndX = 0;
+    
+            document.querySelector('.slider').addEventListener("touchstart", function (event) {
+                touchStartX = event.touches[0].clientX;
+            });
+    
+            document.querySelector('.slider').addEventListener("touchmove", function (event) {
+                touchEndX = event.touches[0].clientX;
+            });
+    
+            document.querySelector('.slider').addEventListener("touchend", function () {
+                handleSwipe();
+                touchStartX = 0;
+                touchEndX = 0;
+            });
+    
+            function handleSwipe() {
+                const swipeThreshold = 50;
+    
+                if (touchEndX - touchStartX > swipeThreshold) {
+                    // Swipe right
+                    document.getElementById('prev').click();
+                } else if (touchStartX - touchEndX > swipeThreshold) {
+                    // Swipe left
+                    document.getElementById('next').click();
+                }
+            }
+        </script>
+        
+    
+    </body>
+    </html>
