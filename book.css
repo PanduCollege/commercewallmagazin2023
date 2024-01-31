@@ -94,4 +94,8 @@ img{
     left: unset;
     right: 100px;
 }
+        .item a{
+    text-decoration: none;
+    color: black;
+}
 }
